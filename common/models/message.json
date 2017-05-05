@@ -9,10 +9,30 @@
     "text": {
       "type": "string",
       "required": true
+    },
+    "created": {
+      "type": "date",
+      "required": false
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "responses": {
+      "type": "hasMany",
+      "model": "Message",
+      "foreignKey": "parentId"
+    },
+    "parent": {
+      "type": "belongsTo",
+      "model": "Message",
+      "foreignKey": "parentId"
+    },
+    "author": {
+      "type": "belongsTo",
+      "model": "Person",
+      "foreignKey": "personId"
+    }
+  },
   "acls": [],
   "methods": {}
 }

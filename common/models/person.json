@@ -1,7 +1,7 @@
 {
   "name": "Person",
   "plural": "People",
-  "base": "PersistedModel",
+  "base": "User",
   "idInjection": true,
   "options": {
     "validateUpsert": true
@@ -21,7 +21,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "messages": {
+      "type": "hasMany",
+      "model": "Message",
+      "foreignKey": "personId"
+    }
+  },
   "acls": [],
   "methods": {}
 }
