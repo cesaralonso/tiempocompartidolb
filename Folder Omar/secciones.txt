@@ -1,0 +1,9 @@
+// HOME
+    Cover de inicio
+    Listado de las más recientes
+    Listado de 5 categorias disponibles (Buscar por)
+    sidebar con promociones
+    footer
+    deadpages
+        -> Quienes somos
+        -> signup

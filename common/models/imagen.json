@@ -1,0 +1,36 @@
+{
+  "name": "Imagen",
+  "plural": "imagenes",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "src": {
+      "type": "string",
+      "required": true
+    },
+    "descripcion": {
+      "type": "string",
+      "required": true
+    },
+    "tipo": {
+      "type": "string",
+      "required": true,
+      "default": "thumb"
+    },
+    "orden": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "principal": {
+      "type": "boolean"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

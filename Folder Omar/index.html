@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>Tiempo compartido</title>
+        <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700|Montserrat:400,700|Muli:200,300,400,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/libs/OwlCarousel/dist/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="assets/libs/OwlCarousel/dist/assets/owl.theme.default.min.css">
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/landing.css">
+    </head>
+    <body>
+        <nav class="Navigation">
+            <div class="container-fluid">
+                <div class="pull-left">
+                    <div class="Navigation__Image">
+                        <a href="index.html">
+                            <figure class="img">
+                                <img src="assets/img/logo.gif" alt="www.tiempocompartido.com">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <div class="Navigation__Actions">
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <a class="border-rigth modal-signin" href="#">Ingresar</a>
+                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-bars pointer Navigation__Menu"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <header class="Header home">
+            <div class="container">
+                <div class="col-xs-12 col-md-6 col-lg-8">
+                    <h1 class="Header__Title margin-bottom-sm wow fadeInUpBig" data-wow-duration="1s">Las vacaciones de tus sueños!</h1>
+                    <p class="Header__Description wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="1s">
+                        Experimenta una diferente forma de vacacionar, disfruta de un tiempo compartido en los clubes mas 
+                        importantes del mundo haciendo trato directo con los propietarios, sin intermediación! consiguiendo 
+                        los mejores precios!, ¿que esperas?, esta oportunidad es única, comienza ahora!
+                    </p>
+                </div>
+            </div>
+        </header>
+        <div class="QuickSearch padding-row">
+            <div class="container">
+                <div class="col-xs-12 col-md-12 margin-bottom">
+                    <h1 class="title">
+                        Busca las vacaciones de tus sueños
+                    </h1>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 where border-gray">
+                    <div class="form-group">
+                        <label for="cmb__Country">Dónde?</label>
+                        <input type="text" class="form-control" id="cmb__Country" placeholder="Destino, Ciudad" list="locations">
+                        <datalist id="locations">
+                            <option value="Aguascalientes"></option>
+                            <option value="Baja California"></option>
+                            <option value="Baja California sur"></option>
+                            <option value="Jalisco"></option>
+                            <option value="Sonora"></option>
+                            <option value="California"></option>
+                            <option value="Florida"></option>
+                            <option value="Texas"></option>
+                            <option value="NYC"></option>
+                            <option value="Jamaica"></option>
+                        </datalist>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 when border-gray">
+                    <div class="form-group">
+                        <div class="col-xs-12 col-lg-12">
+                            <label for="txt__DateVacations">Cuándo?</label>
+                        </div>
+                        <div class="col-xs-6 col-lg-6">
+                            <input type="text" class="form-control" id="txt__StartDateVacations" placeholder="Llegada">
+                        </div>
+                        <div class="col-xs-6 col-lg-6">
+                            <input type="text" class="form-control" id="txt__EndDateVacations" placeholder="Salida">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2 who border-gray">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Huéspedes?</label>
+                        <input type="number" class="form-control" min="1" max="20" placeholder="Cuántas personas">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2 search border-gray">
+                    <div class="form-group">
+                        <a href="searchApp.html" class="btn btn-lg btn-block">Buscar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Latest padding-row">
+            <div class="container">
+                <h3 class="Latest__title margin-bottom">
+                    Lo mejor del verano? es momento de playa
+                </h3>
+                <div class="Latest__content">
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/beach.jpeg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/beach.jpeg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/beach.jpeg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/beach.jpeg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/beach.jpeg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/beach.jpeg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/beach.jpeg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/beach.jpeg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/beach.jpeg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Latest nature padding-row">
+            <div class="container">
+                <h3 class="Latest__title margin-bottom">
+                    Un momento de relajación? Una cabaña en el bosque!
+                </h3>
+                <div class="Latest__content">
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/nature.jpg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/nature.jpg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/nature.jpg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/nature.jpg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/nature.jpg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/nature.jpg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/nature.jpg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/nature.jpg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/nature.jpg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Latest padding-row">
+            <div class="container">
+                <h3 class="Latest__title margin-bottom">
+                    Qué tal disfrutar con la familia? Un cabaña en las montañas
+                </h3>
+                <div class="Latest__content">
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/mountains.jpeg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/mountains.jpeg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/mountains.jpeg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/mountains.jpeg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/mountains.jpeg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/mountains.jpeg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/mountains.jpeg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/mountains.jpeg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="Card">
+                                <div class="Card__Image">
+                                    <img src="assets/img/mountains.jpeg" alt="www.tiempocompartido.com">
+                                </div>
+                                <div class="Card__Content">
+                                    <h4 class="Card__Content__Title">
+                                        Occidental Grand Xcaret
+                                    </h4>
+                                    <p class="Card__Content__Description">
+                                        $1750.00 x Noche
+                                    </p>
+                                    <div class="Card__Actions no-padding-sides">
+                                        <a href="profile.html" class="btn btn-primary-outline">
+                                            Ver propiedad
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="About padding-row">
+            <div class="container">
+                <div class="About__Title margin-bottom">
+                    <h2>Quienes somos</h2>
+                </div>
+                <div class="About__Content">
+                    <p class="text">
+                        Somos una empresa que pone a tu disposición un medio para la libre difusión de propiedades y tiempos compartidos en 
+                        venta y renta entre usuarios vacacionistas, sin comisiones ni intermediarios, 
+                        ¡Consigue el mejor precio para tus vacaciones!.
+                        <br><br>
+                        Nuestro principal objetivo es lograr formar y mantener activa un comunidad de personas interesadas en la compra, venta y renta de semanas o membresias vacacionales, personas que
+	                    a travez de la plataforma consigan ese lazo entre propietarios y viajeros que como tu buscan encontrar el mejor lugar para vacacionar, buscando en <strong>@tiempocompartido</strong>
+                        la mejor de las recomendaciones basadas en tu experiencia y la de tu familia. <strong>Atrevete a conocer el mundo!</strong>
+                        <br><br>
+                        <a href="about.html" class="btn btn-lg btn-outline-white">Conoce más de nosotros!</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <section class="Testimonial">
+            <div class="container">
+                <div class="col-xs-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+                    <div class="Testimonial__Content">
+                        <div class="Testimonial__Img">
+                            <figure class="img">
+                                <img src="assets/img/avatar.jpeg" alt="www.tiempocompartido.com">
+                            </figure>
+                        </div>
+                        <div class="Testimonial__Comment">
+                            <p>
+                                "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi iusto at 
+                                doloremque fugit, temporibus laudantium, odio error sequi maxime officia repellat
+                                libero nostrum suscipit molestiae, id ipsum modi dolorum, minima?"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="Footer">
+            <div class="container margin-bottom-sm">
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="Footer__Title">
+                        <h4 class="title">Tiempo Compartido</h4>
+                    </div>
+                    <div class="Footer__Content">
+                        <ul>
+                            <li><a href="about.html">Acerca de</a></li>
+                            <li><a href="#">Ayuda</a></li>
+                            <li><a href="#">Condiciones de uso</a></li>
+                            <li><a href="#">Politicas de privacidad</a></li>
+                            <li><a href="#">Contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="Footer__Title">
+                        <h4 class="title">Categorías</h4>
+                    </div>
+                    <div class="Footer__Content">
+                        <ul>
+                            <li><a href="#">Tiempos compartidos en la playa</a></li>
+                            <li><a href="#">Tiempos compartidos en el bosque</a></li>
+                            <li><a href="#">Tiempos compartidos en México</a></li>
+                            <li><a href="#">Tiempos compartidos en Cancun</a></li>
+                            <li><a href="#">Tiempos compartidos en Acapulco</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="Footer__Title">
+                        <h4 class="title">Cómo buscar el mejor lugar</h4>
+                    </div>
+                    <div class="Footer__Content">
+                        <p class="text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                            Porro autem deserunt, cupiditate ex molestiae possimus quod, 
+                            laboriosam placeat facilis repellendus nobis ea eos vero, 
+                            earum dolor modi, iusto aliquam blanditiis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="Footer__Copy">
+                <div class="container">
+                    <p class="text-right">
+                        Copyright&copy; 2017
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <div id="modal-launcher"></div>
+        <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/libs/OwlCarousel/dist/owl.carousel.min.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script>new WOW().init()</script>
+    </body>
+</html>

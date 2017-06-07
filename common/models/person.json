@@ -26,8 +26,62 @@
       "type": "hasMany",
       "model": "Message",
       "foreignKey": "personId"
+    },
+    "membresias": {
+      "type": "hasMany",
+      "model": "Membresia",
+      "foreignKey": "idPerson"
+    },
+    "favoritos": {
+      "type": "hasMany",
+      "model": "Favorito",
+      "foreignKey": "idPerson"
     }
   },
-  "acls": [],
-  "methods": {}
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {
+    "whoami": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "body",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "Regresa quien soy",
+      "http": [
+        {
+          "path": "/whoami",
+          "verb": "get"
+        }
+      ]
+    }
+  }
 }

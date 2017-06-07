@@ -5,35 +5,25 @@
       "loopback/server/models",
       "../common/models",
       "./models"
-    ],
-    "mixins": [
-      "loopback/common/mixins",
-      "loopback/server/mixins",
-      "../common/mixins",
-      "./mixins"
     ]
   },
   "User": {
-    "dataSource": "db",
-    "public": false
+    "dataSource": "mongo"
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "mongo",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "mongo",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
-    "public": false,
-    "options": {
-      "strictObjectIDCoercion": true
-    }
+    "dataSource": "mongo",
+    "public": false
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "mongo",
     "public": false
   },
   "Person": {
@@ -41,6 +31,70 @@
     "public": true
   },
   "Message": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Pais": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Estado": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Localidad": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Disponibilidad": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Membresia": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Amenidad": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Destacado": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Afiliacion": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Semana": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Unidad": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Imagen": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Recomendar": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Favorito": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Ubicacion": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Comentario": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Promocion": {
     "dataSource": "mongo",
     "public": true
   }

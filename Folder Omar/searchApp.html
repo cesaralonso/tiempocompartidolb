@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>Tiempo compartido | Buscador</title>
+        <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700|Montserrat:400,700|Muli:200,300,400,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/libs/OwlCarousel/dist/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="assets/libs/OwlCarousel/dist/assets/owl.theme.default.min.css">
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/landing.css">
+    </head>
+    <body>
+        <nav class="Navigation">
+            <div class="container-fluid">
+                <div class="pull-left">
+                    <div class="Navigation__Image">
+                        <a href="index.html">
+                            <figure class="img">
+                                <img src="assets/img/logo.gif" alt="www.tiempocompartido.com">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <div class="Navigation__Actions">
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <a class="border-rigth modal-signin" href="#">Ingresar</a>
+                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-bars pointer Navigation__Menu"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="AppSearch">
+            <div class="col-xs-12 col-md-5 col-lg-5 no-padding">
+                <div class="AppSearch__Filters">
+                    <h2 class="title margin-bottom">
+                        Buscar
+                    </h2>
+                    <form>
+                        <div class="col-xs-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="cmb__Country">Dónde?</label>
+                                <input type="text" class="form-control" id="cmb__Country" placeholder="Destino, Ciudad" list="locations">
+                                <datalist id="locations">
+                                    <option value="Aguascalientes"></option>
+                                    <option value="Baja California"></option>
+                                    <option value="Baja California sur"></option>
+                                    <option value="Jalisco"></option>
+                                    <option value="Sonora"></option>
+                                    <option value="California"></option>
+                                    <option value="Florida"></option>
+                                    <option value="Texas"></option>
+                                    <option value="NYC"></option>
+                                    <option value="Jamaica"></option>
+                                </datalist>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="">Llegando</label>
+                                <input type="text" class="form-control" id="txt__StartDateVacations" placeholder="Llegada">
+                            </div>         
+                        </div>
+                        <div class="col-xs-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="">Saliendo</label>
+                                <input type="text" class="form-control" id="txt__EndDateVacations" placeholder="Salida">
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-lg-8">
+                            <div class="form-group">
+                                <label for="">Huéspedes</label>
+                                <input type="number" class="form-control" placeholder="Huéspedes" min="1">
+                            </div>  
+                        </div>
+                        <div class="col-xs-6 col-lg-4">
+                            <div class="form-group">
+                                <label for="">Forma de pago</label>
+                                <select class="form-control" id="">
+                                    <option value="">Efectivo</option>
+                                    <option value="">Tarjeta Credito/Debito</option>
+                                    <option value="">Transferencia</option>
+                                    <option value="">Cheque</option>
+                                </select>
+                            </div>  
+                        </div>
+                        <div class="col-xs-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="">Precio Minimo</label>
+                                <input type="text" class="form-control" placeholder="Precio Minimo">
+                            </div>         
+                        </div>
+                        <div class="col-xs-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="">Precio Máximo</label>
+                                <input type="text" class="form-control" placeholder="Precio Máximo">
+                            </div>
+                        </div>
+                        <div class="col-xs-4 col-lg-4">
+                            <div class="form-group">
+                                <label for="">Habitaciones</label>
+                                <input type="number" class="form-control" placeholder="Número de habitaciones" min="1">
+                            </div>         
+                        </div>
+                        <div class="col-xs-4 col-lg-4">
+                            <div class="form-group">
+                                <label for="">Camas</label>
+                                <input type="number" class="form-control" placeholder="Número de camas" min="1">
+                            </div>
+                        </div>
+                        <div class="col-xs-4 col-lg-4">
+                            <div class="form-group">
+                                <label for="">Baños</label>
+                                <input type="number" class="form-control" placeholder="Número de baños" min="1">
+                            </div>
+                        </div>
+                        <div class="AppSearch__ExtraFilters">
+                            <div class="col-xs-6 col-lg-16">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> Aeropuerto cercano?
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-lg-16">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> Aeropuerto cercano?
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-lg-16">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> Aeropuerto cercano?
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-lg-16">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> Aeropuerto cercano?
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-lg-16">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> Aeropuerto cercano?
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-lg-16">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> Aeropuerto cercano?
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-lg-16">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> Aeropuerto cercano?
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-7 col-lg-7 no-padding">
+                <div class="AppSearch__Map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119452.57081286251!2d-103.40545392411804!3d20.673938323076886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b18cb52fd39b%3A0xd63d9302bf865750!2sGuadalajara%2C+Jal.!5e0!3m2!1ses-419!2smx!4v1484703328439" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div id="modal-launcher"></div>
+        <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/libs/OwlCarousel/dist/owl.carousel.min.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script>new WOW().init()</script>
+    </body>
+</html>

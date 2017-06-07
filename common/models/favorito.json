@@ -1,0 +1,24 @@
+{
+  "name": "Favorito",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "created": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "membresia": {
+      "type": "belongsTo",
+      "model": "Membresia",
+      "foreignKey": "idMembresia"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

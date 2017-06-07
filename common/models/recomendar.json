@@ -1,0 +1,32 @@
+{
+  "name": "Recomendar",
+  "plural": "recomendados",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "idMembresia": {
+      "type": "number",
+      "required": true
+    },
+    "mensaje": {
+      "type": "string",
+      "required": true,
+      "default": "Te recomiendo cheques este Tiempo Compartido"
+    },
+    "idPerson": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

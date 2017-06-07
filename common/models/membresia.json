@@ -1,0 +1,256 @@
+{
+  "name": "Membresia",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": false
+    },
+    "clubNombre": {
+      "type": "string",
+      "required": true
+    },
+    "clubUrl": {
+      "type": "string",
+      "required": false
+    },
+    "semanaTipo": {
+      "type": "string",
+      "required": true
+    },
+    "descripcion": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": false
+    },
+    "sala": {
+      "type": "boolean",
+      "required": false
+    },
+    "dormitorios": {
+      "type": "number",
+      "required": true
+    },
+    "lockOff": {
+      "type": "boolean",
+      "required": false
+    },
+    "tipoInmueble": {
+      "type": "string",
+      "required": true,
+      "default": "HOTELERA"
+    },
+    "banosCompletos": {
+      "type": "number",
+      "required": false
+    },
+    "banosMedios": {
+      "type": "number",
+      "required": false
+    },
+    "tipoCocina": {
+      "type": "string",
+      "required": false
+    },
+    "maxOcupantes": {
+      "type": "number",
+      "required": true
+    },
+    "maxPrivacidad": {
+      "type": "number",
+      "required": false
+    },
+    "frecSemanasPorAnio": {
+      "type": "string",
+      "required": false
+    },
+    "frecCadaAnios": {
+      "type": "string",
+      "required": false
+    },
+    "compraFecha": {
+      "type": "date",
+      "required": false
+    },
+    "ocultarFecha": {
+      "type": "boolean",
+      "required": false
+    },
+    "compraCaduca": {
+      "type": "boolean",
+      "required": false
+    },
+    "compraCaducidad": {
+      "type": "date",
+      "required": false
+    },
+    "mantenimientoImporte": {
+      "type": "number",
+      "required": false
+    },
+    "mantenimientoMoneda": {
+      "type": "string",
+      "required": false
+    },
+    "venta": {
+      "type": "boolean",
+      "required": false
+    },
+    "ventaPrecio": {
+      "type": "number",
+      "required": false
+    },
+    "ventaMoneda": {
+      "type": "string",
+      "required": false
+    },
+    "ventaNegociable": {
+      "type": "boolean",
+      "required": false
+    },
+    "ventaOcultarImporte": {
+      "type": "boolean",
+      "required": false
+    },
+    "renta": {
+      "type": "boolean",
+      "required": false
+    },
+    "rentaPrecio": {
+      "type": "number",
+      "required": false
+    },
+    "rentaMoneda": {
+      "type": "string",
+      "required": false
+    },
+    "rentaNegociable": {
+      "type": "boolean",
+      "required": false
+    },
+    "status": {
+      "type": "string",
+      "required": false
+    },
+    "telContacto": {
+      "type": "string",
+      "required": true
+    },
+    "cualSemanaFija": {
+      "type": "number",
+      "required": false
+    },
+    "cuantosPuntos": {
+      "type": "number",
+      "required": false
+    },
+    "cuantasNoches": {
+      "type": "number",
+      "required": false
+    },
+    "cualTemporadaflotante": {
+      "type": "string",
+      "required": false
+    },
+    "updated": {
+      "type": "date",
+      "required": false
+    },
+    "created": {
+      "type": "date",
+      "required": false
+    },
+    "ubicadoEn": {
+      "type": "string",
+      "required": false
+    },
+    "metodoPago": {
+      "type": "string",
+      "required": true
+    },
+    "numCamas": {
+      "type": "number",
+      "required": false
+    },
+    "localidadNombre": {
+      "type": "string",
+      "required": true
+    },
+    "paisNombre": {
+      "type": "string",
+      "required": true
+    },
+    "enlace_url": {
+      "type": "string"
+    },
+    "enlace_des": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "amenidades": {
+      "type": "hasMany",
+      "model": "Amenidad",
+      "foreignKey": "idMembresia"
+    },
+    "paisOrigen": {
+      "type": "hasOne",
+      "model": "Pais",
+      "foreignKey": "idPais"
+    },
+    "estadoOrigen": {
+      "type": "hasOne",
+      "model": "Estado",
+      "foreignKey": "idEstado"
+    },
+    "localidadOrigen": {
+      "type": "hasOne",
+      "model": "Localidad",
+      "foreignKey": "idLocalidad"
+    },
+    "creador": {
+      "type": "belongsTo",
+      "model": "Person",
+      "foreignKey": "idPerson"
+    },
+    "disponibilidades": {
+      "type": "hasMany",
+      "model": "Disponibilidad",
+      "foreignKey": "idMembresia"
+    },
+    "destacado": {
+      "type": "hasOne",
+      "model": "Destacado",
+      "foreignKey": "idMembresia"
+    },
+    "afiliaciones": {
+      "type": "hasMany",
+      "model": "Afiliacion",
+      "foreignKey": "idMembresia"
+    },
+    "imagenes": {
+      "type": "hasMany",
+      "model": "Imagen",
+      "foreignKey": "idMembresia"
+    },
+    "ubicacion": {
+      "type": "hasOne",
+      "model": "Ubicacion",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

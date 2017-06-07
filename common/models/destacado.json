@@ -1,0 +1,22 @@
+{
+  "name": "Destacado",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "entrada": {
+      "type": "date",
+      "required": true
+    },
+    "salida": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

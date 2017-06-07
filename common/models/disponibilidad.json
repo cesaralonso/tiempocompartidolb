@@ -1,0 +1,31 @@
+{
+  "name": "Disponibilidad",
+  "plural": "disponibilidades",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "entrada": {
+      "type": "date",
+      "required": true
+    },
+    "salida": {
+      "type": "date",
+      "required": true
+    },
+    "libre": {
+      "type": "boolean",
+      "required": false
+    },
+    "id": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,56 @@
+        
+        <section class="ruta py-1" id="inicia">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-xs-right">
+                        <a href="/">Inicio</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-1" id="">
+            <div class="QuickSearch padding-row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col margin-bottom">
+                            <h1 class="title">
+                                Promociones
+                            </h1>
+                        </div>
+                        <div class="col margin-bottom">
+                            <h3 class="title margin-bottom">
+                                Importante:
+                            </h3>
+                            <p>
+                            La informacion contenida en las publicaciones ni es confirmada ni autorizada por tiempocompartido.com. La confirmacion de la informacion publicada o adjunta es responsabilidad de la persona contratante o Usuario.
+                            </p>
+                            <p>
+                            Las respuestas a los comentarios de los Usuarios es responsabilidad exclusiva del Anunciante.
+                            </p>
+                            <p class="text-right">
+                                tiempocompartido.com
+                            </p>
+                            <h2 class="title margin-bottom">
+                                Promociones del mes
+                            </h2>
+                            <div class="row padding" ng-repeat="promocion in promociones">
+                                <div class="col">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <a ng-href="/promociones/{{promocion.titulo | slugify}}/{{promocion.id}}">
+                                            <img class="media-object" src="..." alt="...">
+                                            </a>
+                                        </div>
+                                        <div class="media-body">
+                                            <h4 class="media-heading">{{promocion.titulo}}</h4>
+                                            {{promocion.descripcion}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>

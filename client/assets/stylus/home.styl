@@ -1,0 +1,73 @@
+.QuickSearch
+    border-bottom 1px solid $Color__LigthGray
+    max-width 100%
+    width 100%
+    input[type="text"],
+    input[type="number"]
+        height 45px !important
+        border-radius 0px !important
+    div
+        &.where
+        &.when
+        &.who
+        &.search
+            height 100px
+            padding 10px 15px
+        &.search
+            text-align center
+            a
+                background-color $Color__Brand--Green
+                color $Color__White
+                margin-top 25px
+                &:hover
+                    background-color #198a68
+.Latest
+    max-width 100%
+    width 100%
+    &.nature
+        background-color $Color__LigthGray
+.About
+    background url(../img/banner_bg_colored.png) center bottom $Color__Brand--Green
+    background-repeat repeat-x
+    max-width 100%
+    width 100%
+    &__Title
+    &__Content
+        color $Color__White
+    &__Title
+        font-family $Font__Montserrat
+.Testimonial
+    background-image url('../img/testimonials.jpeg')
+    background-size cover
+    background-attachment fixed
+    height 500px
+    max-width 100%
+    position relative
+    width 100%
+    &:after
+        background-color rgba(0,0,0,.5)
+        content ''
+        height 100%
+        left 0
+        position absolute
+        top 0
+        width 100%
+        position absolute
+        z-index 100
+    &__Content
+        padding 150px 0px
+        text-align center
+    &__Img
+    &__Comment
+        color $Color__White
+        display inline-block
+        position relative
+        z-index 400
+    &__Img
+        margin-bottom 15px
+        img
+            border-radius 100%
+            height 130px
+            width 130px
+    &__Comment
+        font-style italic

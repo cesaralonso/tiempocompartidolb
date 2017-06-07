@@ -1,0 +1,49 @@
+      
+          
+        <section class="ruta py-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-xs-right">
+                        <a href="/">Inicio</a> » <a href="/mi-cuenta">Mi cuenta</a> » <a href="/mis-membresias">Mis membresias</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="AppSearch">
+            <div class="row">
+                <div class="col-xs-12 col-md-0 col-lg-1 no-padding"> </div>
+                <div class="col-xs-12 col-md-5 col-lg-4 no-padding">
+                    <div class="AppSearch__Filters">
+                        <h1 class="title margin-bottom">
+                            Establecer ubicación en mapa
+                        </h1>
+                        <div class="row">
+                            <div class="col-xs-12 col-lg-12">
+                                <form id="ubicacionForm" role="form">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-lg-12">
+                                            <div class="form-group">
+                                                <label for="">Dirección</label>
+                                                <input type="text" class="form-control" ng-model="ubicacion.maxOcupantes" placeholder="Escribe la dirección" min="1" max="30">
+                                            </div>  
+                                        </div>
+                                        <div class="col-xs-12 col-lg-12">
+                                            <button type="button" class="width-35 pull-right btn btn-primary" ng-click="doUbicationSet(ubicacion)">
+                                                <i class="ace-icon fa fa-check"></i>
+                                                Establecer ubicación
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-7 col-lg-7 no-padding">
+                    <div class="AppSearch__Map">
+                        <div id="map_ubicacion" class="embed-responsive-item" style="height:100vh; width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>

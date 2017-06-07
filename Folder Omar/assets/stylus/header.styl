@@ -1,0 +1,53 @@
+.Header
+    background-color $Color__White
+    height 600px
+    max-height 6000px
+    max-width 100%
+    overflow hidden
+    position relative
+    width 100%
+    &.home
+        background-image url('../img/cover-hom.jpeg')
+        background-size cover
+        background-position 0px -150px
+    &.about
+        background-image url('../img/cover-home-family.jpeg')
+        background-size cover
+        background-position 0px 0px
+        height 500px
+        max-height 500px
+        &.Header__Title
+            margin-top 200px
+    &.search
+        background-image url('../img/map.jpeg')
+        background-size cover
+        background-position 0px 0px
+        height 500px
+        max-height 500px
+        &.Header__Title
+            margin-top 200px
+    &:after
+        background rgba($Color__Black, .5)
+        content ''
+        height 100%
+        left 0
+        top 0
+        position absolute
+        width 100%
+    &__Title
+    &__Description
+        color $Color__White
+        position relative
+        z-index 100
+    &__Title
+        font-family $Font__Brand
+        font-size 3em
+        font-weight 400
+        margin-top 250px
+    &__Description
+        font-family $Font__Muli
+.Logo
+    margin-top 20px
+    position relative
+    z-index 100
+
