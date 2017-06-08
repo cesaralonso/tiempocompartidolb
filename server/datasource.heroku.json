@@ -4,9 +4,9 @@
     "connector": "memory"
   },
   "mongo": {
-    "host": "ds135700.mlab.com",
-    "port": 35700,
-    "database": "heroku_j8wnj3jz",
+    "host": "ds133221.mlab.com",
+    "port": 33221,
+    "database": "tiempocompartidolb",
     "password": "${MONGOLAB_PASSWORD}",
     "name": "mongo",
     "user": "${MONGOLAB_USER}",
