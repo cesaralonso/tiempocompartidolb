@@ -20,6 +20,6 @@
     "moment": "2.13.0",
     "angular-translate": "2.11.0",
     "angular-translate-loader-partial": "2.11.0",
-    "ngToast": "^2.0.0"
+    "ngtoast": "^2.0.0"
   }
 }
