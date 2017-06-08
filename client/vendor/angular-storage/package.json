@@ -1,0 +1,117 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "angular-storage",
+        "scope": null,
+        "escapedName": "angular-storage",
+        "name": "angular-storage",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\users\\Carolina\\angular\\loopback-example-angular"
+    ]
+  ],
+  "_from": "angular-storage@latest",
+  "_id": "angular-storage@0.0.15",
+  "_inCache": true,
+  "_location": "/angular-storage",
+  "_nodeVersion": "4.2.4",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/angular-storage-0.0.15.tgz_1459579840711_0.3344250877853483"
+  },
+  "_npmUser": {
+    "name": "ryanchenkie",
+    "email": "ryanchenkie@gmail.com"
+  },
+  "_npmVersion": "3.8.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "angular-storage",
+    "scope": null,
+    "escapedName": "angular-storage",
+    "name": "angular-storage",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-storage/-/angular-storage-0.0.15.tgz",
+  "_shasum": "005d64808982848d949725e2b2bf90a1dd27afc1",
+  "_shrinkwrap": null,
+  "_spec": "angular-storage",
+  "_where": "C:\\users\\Carolina\\angular\\loopback-example-angular",
+  "author": {
+    "name": "Martin Gontovnikas",
+    "email": "martin@gon.to"
+  },
+  "bugs": {
+    "url": "https://github.com/auth0/angular-storage/issues"
+  },
+  "dependencies": {},
+  "description": "A Storage done right for AngularJS.",
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "chai-jquery": "^1.2.3",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.3.4",
+    "gulp-jshint": "^1.9.2",
+    "gulp-ng-annotate": "^0.3.3",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^0.3.1",
+    "jshint-stylish": "^1.0.0",
+    "karma": "^0.12.22",
+    "karma-chai": "^0.1.0",
+    "karma-chai-jquery": "^1.0.0",
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-coverage": "^0.2.7",
+    "karma-detect-browsers": "^1.1.2",
+    "karma-jasmine": "^0.1.5",
+    "karma-jquery": "^0.1.0",
+    "karma-mocha": "^0.1.8",
+    "karma-mocha-reporter": "^1.0.1",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-sinon-chai": "^0.2.0",
+    "mocha": "^1.21.4",
+    "sinon": "^1.10.3",
+    "sinon-chai": "^2.5.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "005d64808982848d949725e2b2bf90a1dd27afc1",
+    "tarball": "https://registry.npmjs.org/angular-storage/-/angular-storage-0.0.15.tgz"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "gitHead": "57bfe9eff7ff933011bc6732e586996c3846b3d1",
+  "homepage": "https://github.com/auth0/angular-storage#readme",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "mgonto",
+      "email": "martin@gonto.com.ar"
+    },
+    {
+      "name": "ryanchenkie",
+      "email": "ryanchenkie@gmail.com"
+    }
+  ],
+  "name": "angular-storage",
+  "optionalDependencies": {},
+  "readme": "# angular-storage [![Build Status](https://secure.travis-ci.org/auth0/angular-storage.svg?branch=master)](https://travis-ci.org/auth0/angular-storage)\n\nA Storage done right for AngularJS.\n\n## Key Features\n\n* Uses **`localStorage` or `sessionStorage` by default but if it's not available, it uses `ngCookies`**.\n* Lets you **save JS Objects**\n* If **you save a `Number`, you get a `Number`**, not a String\n* Uses a **caching system** so that if you already have a value, it won't get it from the store again.\n\n## Installing it\n\nYou have several options:\n\n````bash\nbower install a0-angular-storage\n````\n\n````bash\nnpm install angular-storage\n````\n\n````html\n<script type=\"text/javascript\" src=\"https://cdn.rawgit.com/auth0/angular-storage/master/dist/angular-storage.js\"></script>\n````\n\n## Using it\n\n````js\nangular.module('app', ['angular-storage'])\n.controller('Controller', function(store) {\n  var myObj = {\n    name: 'mgonto'\n  };\n\n  store.set('obj', myObj);\n\n  var myNewObject = store.get('obj');\n\n  angular.equals(myNewObject, myObj); // return true\n\n  store.remove('obj');\n\n  store.set('number', 2);\n\n  typeof(store.get('number')) === 'number'\n});\n````\n\n## Namespaced Storages\n\nYou can also create namespaced storages if you want\n\n````js\nangular.module('app', ['angular-storage'])\n.factory('Auth0Store', function(store) {\n  return store.getNamespacedStore('auth0');\n})\n.controller('Controller', function(Auth0Store) {\n\n  var myObj = {\n    name: 'mgonto'\n  };\n\n  // This will be saved in localStorage as auth0.obj\n  Auth0Store.set('obj', myObj);\n\n  // This will look for auth0.obj\n  var myNewObject = Auth0Store.get('obj');\n\n  angular.equals(myNewObject, myObj); // return true\n});\n````\n\n## Changing storage type\n\n```js\nangular.module('app', ['angular-storage'])\n  .config(function(storeProvider) {\n    // Store defaults to localStorage but we can set sessionStorage or cookieStorage.\n    storeProvider.setStore('sessionStorage');\n  })\n  .controller('Controller', function(store) {\n\n  var myObj = {\n    name: 'mgonto'\n  };\n\n  // This will be saved in sessionStorage as obj\n  store.set('obj', myObj);\n\n  // This will look for obj in sessionStorage\n  var myNewObject = store.get('obj');\n\n  angular.equals(myNewObject, myObj); // return true\n});\n```\n\n\n## API\n\n### storeProvider.setStore(storageName)\n\nSets the underlying store for the `store` service. It can be `localStorage`, `sessionStorage` or `cookieStorage`. Defaults to `localStorage`\n\n### store.set(name, value)\n\nSets a new `value` to the storage with the key `name`. It can be any object.\n\n### store.get(name)\n\nReturns the saved `value` with they key `name`. If you saved an object, you get an object.\n\n### store.remove(name)\n\nDeletes the saved `value` with the key `name`\n\n### store.getNamespacedStore(namespace, delimiter)\n\nReturns a new `store` service that will use the `namespace` and `delimiter` when saving and getting values like the following `namespace[delimiter]key`. For example `auth0.object` considering `auth0` as `namespace` and `.` as a `delimiter`\n\n## Usages\n\nThis library is used in [auth0-angular](https://github.com/auth0/auth0-angular)\n\n## Contributing\n\nJust clone the repo, run `npm install`, `bower install` and then `gulp` to work :).\n\n## Issue Reporting\n\nIf you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://auth0.com/whitehat) details the procedure for disclosing security issues.\n\n## Author\n\n[Auth0](auth0.com)\n\n## License\n\nThis project is licensed under the MIT license. See the [LICENSE](LICENSE) file for more info.\n\n\n\n\n\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/auth0/angular-storage.git"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "version": "0.0.15"
+}

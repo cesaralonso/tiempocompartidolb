@@ -19,3 +19,6 @@ node_modules
 npm-debug.log
 client/vendor
 !client/vendor/ng-toast
+!client/vendor/angular-storage
+!client/vendor/angular-sanitize
+!client/vendor/angular-animate
