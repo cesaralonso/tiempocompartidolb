@@ -1,0 +1,18 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mongo": {
+    "host": "ds135700.mlab.com",
+    "port": 33221,
+    "database": "tiempocompartidolb",
+    "password": "${MONGOLAB_PASSWORD}",
+    "name": "mongo",
+    "user": "${MONGOLAB_USER}",
+    "connector": "mongodb"
+  }
+}
+
+
+/* mongodb://<dbuser>:<dbpassword>@ds135700.mlab.com:35700/heroku_j8wnj3jz  ds133221 */
