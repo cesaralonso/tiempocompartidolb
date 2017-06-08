@@ -6,7 +6,7 @@
   "mongo": {
     "host": "ds135700.mlab.com",
     "port": 35700,
-    "database": "tiempocompartidolb",
+    "database": "heroku_j8wnj3jz",
     "password": "${MONGOLAB_PASSWORD}",
     "name": "mongo",
     "user": "${MONGOLAB_USER}",
