@@ -13,9 +13,9 @@
         console.log("Autenticacion", Autenticacion.user);
         console.log("Autenticacion logeado", Autenticacion.user.logeado);
 
-        $scope.autenticacion = {}
-        $scope.autenticacion.logged = Autenticacion.user.logeado;
-        $scope.autenticacion.user = Autenticacion.user;
+
+        $scope.logged = Autenticacion.user.logeado;
+        $scope.user = Autenticacion.user;
 
 
     }

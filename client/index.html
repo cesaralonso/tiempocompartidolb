@@ -40,14 +40,14 @@
                     <i class="fa fa-bars" aria-hidden="true"></i></button>
                 <nav id="menu-principal" class="collapse">
                     <ul>
-                        <li ng-show="autenticacion.logged">{{username}}</li>
+                        <li ng-show="logged">{{username}}</li>
                         <li><a ng-href="/busqueda" class="border-rigth"><i  class="fa fa-search"></i> Búsqueda</a></li>
                         <li><a ng-href="/promociones" class="border-rigth"><i  class="fa fa-star"></i> Promociones</a></li>
                         <li><a ng-href="/listados" class="border-rigth"><i  class="fa fa-list"></i> Listados</a></li>
-                        <li ng-hide="autenticacion.logged"><a ng-href="/login" class="border-rigth"> Ingresa </a></li>
-                        <li ng-hide="autenticacion.logged"><a ng-href="/signup" class="border-rigth">Regístrate</a></li>
-                        <li ng-show="autenticacion.logged"><a ng-href="/mi-cuenta" class="border-rigth">Mi cuenta <span class="caret"></span></a></li>
-                        <li ng-show="autenticacion.logged"><a ng-click="doLogout();"><i class="fa fa-sign-out"></i> Cerrar sesión</a></li>
+                        <li ng-hide="logged"><a ng-href="/login" class="border-rigth"> Ingresa </a></li>
+                        <li ng-hide="logged"><a ng-href="/signup" class="border-rigth">Regístrate</a></li>
+                        <li ng-show="logged"><a ng-href="/mi-cuenta" class="border-rigth">Mi cuenta <span class="caret"></span></a></li>
+                        <li ng-show="logged"><a ng-click="doLogout();"><i class="fa fa-sign-out"></i> Cerrar sesión</a></li>
                     </ul>
                 </nav>
             </div>

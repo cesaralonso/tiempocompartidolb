@@ -6,7 +6,7 @@ var sslConfig = require('./private/ssl-config');
 var httpsRedirect = require('./middleware/https-redirect');
 
 var app = module.exports = loopback();
-app.use(httpsRedirect(app));
+//app.use(httpsRedirect(app));
 
 function showExplorerUrl(baseUrl) {
   if (app.get('loopback-component-explorer')) {
