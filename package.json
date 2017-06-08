@@ -8,6 +8,7 @@
   },
   "scripts": {
     "lint": "eslint .",
+    "postinstall": "bower install",
     "start": "node .",
     "posttest": "npm run lint && nsp check"
   },
