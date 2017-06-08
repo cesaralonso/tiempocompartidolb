@@ -8,8 +8,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "start": "node .",
-    "postinstall": "bower install"
+    "start": "node ."
   },
   "dependencies": {
     "angular-animate": "^1.6.4",
