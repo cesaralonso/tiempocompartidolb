@@ -12,14 +12,13 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "1.5.7",
+    "angular": "^1.5.7",
     "angular-animate": "1.5.7",
     "angular-resource": "1.5.7",
     "angular-ui-router": "0.3.0",
     "bootstrap": "~3.3.4",
     "moment": "2.13.0",
     "angular-translate": "2.11.0",
-    "angular-translate-loader-partial": "2.11.0",
-    "ngtoast": "^2.0.0"
+    "angular-translate-loader-partial": "2.11.0"
   }
 }
