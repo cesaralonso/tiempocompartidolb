@@ -9,8 +9,7 @@
   "scripts": {
     "lint": "eslint .",
     "start": "node .",
-    "postinstall": "bower install",
-    "posttest": "npm run lint && nsp check"
+    "postinstall": "bower install"
   },
   "dependencies": {
     "angular-animate": "^1.6.4",
