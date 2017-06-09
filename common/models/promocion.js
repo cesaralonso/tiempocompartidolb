@@ -12,19 +12,17 @@ module.exports = function(Promocion) {
        next(); 
     });
     
-    /*
-
     Promocion.beforeRemote('find', function(ctx, instance, next) {
         if (!ctx.args.filter) {
-            ctx.args.filter = {};
+            ctx.args.filter = {}
         }
         ctx.args.filter.include = [ "imagenes" ];
         if (!ctx.args.filter.where) {
             ctx.args.filter.where = {};
         }
-        ctx.args.filter.where = _.merge(ctx.args.filter.where,  { promocionId: { exists : true }});
+        ctx.args.filter.where = _.merge(ctx.args.filter.where,  { id: { exists : true }});
         ctx.args.filter.order = "created DESC"
         next();
     });
-    */
+    
 };

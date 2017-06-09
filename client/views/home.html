@@ -6,15 +6,15 @@
                         <h2 class="h3 text-xs-center text-md-left margin-bottom">¿Buscas vacaciones de calidad y al mejor precio para toda la familia?</h2>
                         <p>Experimenta una diferente forma de vacacionar, disfruta de un tiempo compartido en los clubes mas importantes del mundo haciendo trato directo con los propietarios, sin intermediación, consiguiendo los mejores precios, ¿que esperas?, ¡Comienza el Viaje Ahora!.</p>
                     </div>
-                    <div class="col-md-4 col-xl-3 wow bounceIn text-white" data-wow-delay=".6s">
-                        <div class="Footer__Title">
-                            <h4 class="title">{{promocion.titulo}}</h4>
+                    <div class="col-md-4 col-xl-3 wow bounceIn text-center" data-wow-delay=".6s">
+                        <div class="Card__Image">
+                            <img src="{{promocion.imagenes[0].src}}" alt="imagen">
                         </div>
                         <div class="Footer__Content">
                             <p class="lead">
-                            {{promocion.descripcion}}
+                            {{promocion.titulo}}
                             </p>
-                            <a href="/promociones" class="btn btn-success">Todas las Promociones</a href="/promociones">
+                            <a href="/promociones" class="btn btn-success">Ver más promociones</a href="/promociones">
                         </div>
                     </div>
                 </div>
