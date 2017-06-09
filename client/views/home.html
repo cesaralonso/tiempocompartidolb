@@ -81,15 +81,18 @@
                                 <div class="Card">
                                     <a ng-href="/membresia/tiempo-compartido-en-{{membresia.localidadOrigen.nombre | slugify}}-{{membresia.clubNombre | slugify}}-{{membresia.paisOrigen.nombre | slugify}}/{{membresia.id}}">
                                         <div class="Card__Image">
-                                            <img src="assets/img/beach.jpeg" alt="imagen">
+                                            <img src="{{membresia.imagenes[0].src}}" alt="imagen">
                                         </div>
                                     </a>
                                     <div class="Card__Content">
                                         <h4 class="Card__Content__Title">
-                                            {{membresia.descripcion}}
+                                            {{membresia.titulo}}
                                         </h4>
-                                        <p class="Card__Content__Description">
+                                        <p ng-show="membresia.renta" class="Card__Content__Description">
                                             {{membresia.precioRenta}}
+                                        </p>
+                                        <p ng-show="membresia.venta" class="Card__Content__Description">
+                                            {{membresia.precioVenta}}
                                         </p>
                                         <div class="Card__Actions no-padding-sides">
                                             <a ng-href="/membresia/tiempo-compartido-en-{{membresia.localidadOrigen.nombre | slugify}}-{{membresia.clubNombre | slugify}}-{{membresia.paisOrigen.nombre | slugify}}/{{membresia.id}}" class="btn btn-primary-outline">
@@ -114,18 +117,21 @@
                                 <div class="Card">
                                     <a ng-href="/membresia/tiempo-compartido-en-{{membresia.localidadNombre | slugify}}-{{membresia.clubNombre | slugify}}-{{membresia.paisNombre | slugify}}/{{membresia.id}}">
                                         <div class="Card__Image">
-                                            <img src="assets/img/beach.jpeg" alt="imagen">
+                                            <img src="{{membresia.imagenes[0].src}}" alt="imagen">
                                         </div>
                                     </a>
                                     <div class="Card__Content">
                                         <h4 class="Card__Content__Title">
-                                            {{membresia.descripcion}}
+                                            {{membresia.titulo}}
                                         </h4>
-                                        <p class="Card__Content__Description">
+                                        <p ng-show="membresia.renta" class="Card__Content__Description">
                                             {{membresia.precioRenta}}
                                         </p>
+                                        <p ng-show="membresia.venta" class="Card__Content__Description">
+                                            {{membresia.precioVenta}}
+                                        </p>
                                         <div class="Card__Actions no-padding-sides">
-                                            <a ng-href="/membresia/tiempo-compartido-en-{{membresia.localidadNombre | slugify}}-{{membresia.clubNombre | slugify}}-{{membresia.paisNombre | slugify}}/{{membresia.id}}" class="btn btn-primary-outline">
+                                            <a ng-href="/membresia/tiempo-compartido-en-{{membresia.localidadOrigen.nombre | slugify}}-{{membresia.clubNombre | slugify}}-{{membresia.paisOrigen.nombre | slugify}}/{{membresia.id}}" class="btn btn-primary-outline">
                                                 {{membresia.clubNombre}}
                                             </a>
                                         </div>
@@ -147,15 +153,18 @@
                                 <div class="Card">
                                     <a ng-href="/membresia/tiempo-compartido-en-{{membresia.localidadOrigen.nombre | slugify}}-{{membresia.clubNombre | slugify}}-{{membresia.paisOrigen.nombre | slugify}}/{{membresia.id}}">
                                         <div class="Card__Image">
-                                            <img src="assets/img/beach.jpeg" alt="imagen">
+                                            <img src="{{membresia.imagenes[0].src}}" alt="imagen">
                                         </div>
                                     </a>
                                     <div class="Card__Content">
                                         <h4 class="Card__Content__Title">
-                                            {{membresia.descripcion}}
+                                            {{membresia.titulo}}
                                         </h4>
-                                        <p class="Card__Content__Description">
+                                        <p ng-show="membresia.renta" class="Card__Content__Description">
                                             {{membresia.precioRenta}}
+                                        </p>
+                                        <p ng-show="membresia.venta" class="Card__Content__Description">
+                                            {{membresia.precioVenta}}
                                         </p>
                                         <div class="Card__Actions no-padding-sides">
                                             <a ng-href="/membresia/tiempo-compartido-en-{{membresia.localidadOrigen.nombre | slugify}}-{{membresia.clubNombre | slugify}}-{{membresia.paisOrigen.nombre | slugify}}/{{membresia.id}}" class="btn btn-primary-outline">
