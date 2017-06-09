@@ -7,8 +7,8 @@ angular
 
     $scope.doLogin = function(credentials) {
 
-      // In the Login controller
-      Person.login(credentials, function(user) {
+      Person.login(credentials,
+      function() {
 
         ngToast.create('Logeado correctamente');
         $rootScope.currentUser = user;
@@ -19,7 +19,17 @@ angular
         var next = $location.nextAfterLogin || '/';
         $location.nextAfterLogin = null;
         $location.path(next);
+
+      }, function(res) {
+        // error
+        ngToast.create({
+          className: 'danger',
+          content: 'Tus credenciales no son correctas'
+        });
+        
       });
+
+
     }
 
   });

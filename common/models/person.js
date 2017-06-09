@@ -19,6 +19,20 @@ module.exports = function(Person) {
        next(); 
     });
 
+
+    Person.beforeRemote('*.__findOne__membresias', function(ctx, instance, next) {
+        if (!ctx.args.filter) {
+            ctx.args.filter = {};
+        }
+        ctx.args.filter.include = [ "creador", "disponibilidades", "amenidades", "paisOrigen", "estadoOrigen", "localidadOrigen", "afiliaciones", "destacado", "imagenes", "ubicacion"  ];
+        if (!ctx.args.filter.where) {
+            ctx.args.filter.where = {};
+        }
+        ctx.args.filter.where = _.merge(ctx.args.filter.where, { idPerson: { exists : true }});
+        ctx.args.filter.order = "created DESC"
+        next();
+    });
+
     Person.beforeRemote('*.__findById__membresias', function(ctx, instance, next) {
         if (!ctx.args.filter) {
             ctx.args.filter = {};

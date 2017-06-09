@@ -29,14 +29,11 @@
 
                             <div class="media" ng-repeat="membresia in membresias">
                                 <div class="media-left">
-                                    <a ng-href="/promociones/{{promocion.titulo | slugify}}/{{promocion.id}}">
-                                        <img ng-src="{{membresia.imagenes[0].src}}" class="media-object">
-                                    </a>
+                                    <img ng-src="{{membresia.imagenes[0].src}}" class="media-object">
                                 </div>
                                 <div class="media-body">
                                     <h4 class="media-heading">{{membresia.titulo}}</h4>
                                     {{membresia.descripcion}}
-
 
                                     <i class="fa fa-2x fa-star pull-right"
                                         ng-click="membresiaImagenes(membresia)">
@@ -44,11 +41,8 @@
                                     <i class="fa fa-2x fa-map pull-right"
                                         ng-click="membresiaUbicacion(membresia)">
                                     </i>
-                                    <i class="fa fa-2x fa-star pull-right"
+                                    <i class="fa fa-2x fa-img pull-right"
                                         ng-click="membresiaAfiliaciones(membresia)">
-                                    </i>
-                                    <i class="fa fa-2x fa-star pull-right"
-                                        ng-click="membresiaDisponibilidades(membresia)">
                                     </i>
                                     <i class="fa fa-2x fa-remove pull-right"
                                         ng-click="removeMembresia_(membresia)">
