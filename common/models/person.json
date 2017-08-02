@@ -9,7 +9,7 @@
   "properties": {
     "name": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "nickname": {
       "type": "string",
