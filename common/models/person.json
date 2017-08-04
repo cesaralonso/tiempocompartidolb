@@ -18,6 +18,38 @@
     "email": {
       "type": "string",
       "required": true
+    },
+    "ciudad": {
+      "type": "string",
+      "required": false
+    },
+    "pais": {
+      "type": "string",
+      "required": false
+    },
+    "lenguaje": {
+      "type": "string",
+      "required": false
+    },
+    "telefono": {
+      "type": "string",
+      "required": false
+    },
+    "destinosInteres": {
+      "type": "string",
+      "required": false
+    },
+    "informacion": {
+      "type": "string",
+      "required": false
+    },
+    "usuarioTipo": {
+      "type": "string",
+      "required": false
+    },
+    "datosVisibles": {
+      "type": "boolean",
+      "required": false
     }
   },
   "validations": [],
