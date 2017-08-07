@@ -50,6 +50,10 @@
     "datosVisibles": {
       "type": "boolean",
       "required": false
+    },
+    "lenguajes": {
+      "type": "string",
+      "required": false
     }
   },
   "validations": [],
