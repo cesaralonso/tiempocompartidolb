@@ -196,6 +196,9 @@
     },
     "enlace_des": {
       "type": "string"
+    },
+    "mantenimiento": {
+      "type": "boolean"
     }
   },
   "validations": [],
