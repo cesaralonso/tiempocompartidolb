@@ -252,8 +252,35 @@
       "type": "hasOne",
       "model": "Ubicacion",
       "foreignKey": ""
+    },
+    "messages": {
+      "type": "hasMany",
+      "model": "Message",
+      "foreignKey": "idMembresia"
     }
   },
   "acls": [],
-  "methods": {}
+  "methods": {
+    "findUbicadoEn": {
+      "accepts": [
+        {
+          "arg": "ubicadoEn", 
+          "type": "string"
+        }
+      ],
+      "returns": [
+        {
+          "arg": "membresias",
+          "type": "object"
+        }
+      ],
+      "description": "Devuelve todas las membresias relacionadas con alguna ubicacion ",
+      "http": [
+        {
+          "path": "/findUbicadoEn",
+          "verb": "get"
+        }
+      ]
+    }
+  }
 }

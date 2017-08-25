@@ -17,8 +17,35 @@
       "type": "belongsTo",
       "model": "Membresia",
       "foreignKey": "idMembresia"
+    },
+    "persona": {
+      "type": "belongsTo",
+      "model": "Person",
+      "foreignKey": "idPerson"
     }
   },
   "acls": [],
-  "methods": {}
+  "methods": {
+    "deleteFavorito": {
+      "accepts": [
+        {
+          "arg": "idMembresia", 
+          "type": "string"
+        }
+      ],
+      "returns": [
+        {
+          "arg": "isDeleted",
+          "type": "boolean"
+        }
+      ],
+      "description": "Elimina un favorito relacionado a una persona y una membresia",
+      "http": [
+        {
+          "path": "/deletefavorito/:idPersona",
+          "verb": "delete"
+        }
+      ]
+    }
+  }
 }

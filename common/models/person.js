@@ -1,5 +1,7 @@
 'use strict';
 
+var _ = require('lodash');
+
 module.exports = function(Person) {
     Person.beforeRemote('*.__create__messages', function(ctx, instance, next) {
        var body = ctx.args.data;
@@ -46,11 +48,12 @@ module.exports = function(Person) {
         next();
     });
 
-    Person.beforeRemote('*.__find__membresias', function(ctx, instance, next) {
+    Person.beforeRemote('*.__get__membresias', function(ctx, instance, next) {
+        console.log('Entró');
         if (!ctx.args.filter) {
             ctx.args.filter = {};
         }
-        ctx.args.filter.include = [ "creador", "disponibilidades", "amenidades", "paisOrigen", "estadoOrigen", "localidadOrigen", "afiliaciones", "destacado", "imagenes", "ubicacion" ];
+        ctx.args.filter.include = [ "creador", "disponibilidades", "amenidades", "paisOrigen", "estadoOrigen", "localidadOrigen", "afiliaciones", "destacado", "imagenes", "ubicacion", "messages" ];
         if (!ctx.args.filter.where) {
             ctx.args.filter.where = {};
         }
@@ -58,11 +61,25 @@ module.exports = function(Person) {
         ctx.args.filter.order = "created DESC"
         next();
     });
-    
+
+    Person.beforeRemote('*.__get__favoritos', function(ctx, instance, next) {
+        console.log('Entró');
+        if (!ctx.args.filter) {
+            ctx.args.filter = {};
+        }
+        ctx.args.filter.include = [ "membresia" ];
+        if (!ctx.args.filter.where) {
+            ctx.args.filter.where = {};
+        }
+        ctx.args.filter.where = _.merge(ctx.args.filter.where, { idPerson: { exists : true }});
+        ctx.args.filter.order = "created DESC"
+        next();
+    });
+
     Person.whoami = function(callback) {
         callback();
     }
-    
+
     function getAuthenticationError() {
       var error = new Error();
       error.statusCode = 401;
@@ -87,6 +104,7 @@ module.exports = function(Person) {
             next();
         })
     });
+
     
     Person.disableRemoteMethod('__create__accessTokens', false);
     Person.disableRemoteMethod('__delete__accessTokens', false);

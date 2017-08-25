@@ -1,5 +1,7 @@
 'use strict';
 
+var _ = require('lodash');
+
 module.exports = function(Favorito) {
     Favorito.beforeRemote('create', function(ctx, instance, next) {
        var body = ctx.args.data;
@@ -16,7 +18,7 @@ module.exports = function(Favorito) {
         if (!ctx.args.filter) {
             ctx.args.filter = {};
         }
-        ctx.args.filter.include = [ "membresia"];
+        ctx.args.filter.include = [ "membresia", "persona"];
         if (!ctx.args.filter.where) {
             ctx.args.filter.where = {};
         }
@@ -25,7 +27,27 @@ module.exports = function(Favorito) {
         next();
     });
 
-
+    Favorito.deleteFavorito = function(callback) {
+        callback();
+    }
+    
+    Favorito.afterRemote('deleteFavorito', function(context, model, next) {
+        var userId = context.req.idMembresia;
+        if (!userId) {
+            return next(getAuthenticationError());
+        }
+        // Falta saber como obtener el idPerson que se esta mandando por la URL
+        Favorito.delete({ where: { idPerson: idperson, idMembresia: idMembresia}}, function(error, user) {
+            if (error) {
+                return next(error);
+            }
+            if (!user) {
+                return next(getAuthenticationError());
+            }
+            context.result = user;
+            next();
+        })
+    });
 
 
 

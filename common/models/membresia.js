@@ -54,7 +54,7 @@ module.exports = function(Membresia) {
         if (!ctx.args.filter) {
             ctx.args.filter = {};
         }
-        ctx.args.filter.include = [ "creador", "disponibilidades", "amenidades", "paisOrigen", "estadoOrigen", "localidadOrigen", "afiliaciones", "destacado", "imagenes", "ubicacion" ];
+        ctx.args.filter.include = [ "creador", "disponibilidades", "amenidades", "paisOrigen", "estadoOrigen", "localidadOrigen", "afiliaciones", "destacado", "imagenes", "ubicacion", "messages" ];
         if (!ctx.args.filter.where) {
             ctx.args.filter.where = {};
         }
@@ -69,7 +69,7 @@ module.exports = function(Membresia) {
         if (!ctx.args.filter) {
             ctx.args.filter = {};
         }
-        ctx.args.filter.include = [ "creador", "disponibilidades", "amenidades", "paisOrigen", "estadoOrigen", "localidadOrigen", "afiliaciones", "destacado", "imagenes", "ubicacion" ];
+        ctx.args.filter.include = [ "creador", "disponibilidades", "amenidades", "paisOrigen", "estadoOrigen", "localidadOrigen", "afiliaciones", "destacado", "imagenes", "ubicacion", "messages" ];
         if (!ctx.args.filter.where) {
             ctx.args.filter.where = {};
         }
@@ -82,7 +82,7 @@ module.exports = function(Membresia) {
         if (!ctx.args.filter) {
             ctx.args.filter = {};
         }
-        ctx.args.filter.include = [ "creador", "disponibilidades", "amenidades", "paisOrigen", "estadoOrigen", "localidadOrigen", "afiliaciones", "destacado", "imagenes", "ubicacion" ];
+        ctx.args.filter.include = [ "creador", "disponibilidades", "amenidades", "paisOrigen", "estadoOrigen", "localidadOrigen", "afiliaciones", "destacado", "imagenes", "ubicacion", "messages" ];
         if (!ctx.args.filter.where) {
             ctx.args.filter.where = {};
         }
@@ -91,6 +91,20 @@ module.exports = function(Membresia) {
         next();
     });
 
+    Membresia.findUbicadoEn = function(callback) {
+        callback();
+    }
+    
+    Membresia.afterRemote('findUbicadoEn', function(context, model, next) {
+        var ubicadoEn = context.req.ubicadoEn;
+
+        Membresia.find({ where: {  ubicadoEn: ubicadoEn }}, function(error, membresias) {
+            if (error) 
+                return next(error);
+            context.result = membresias;
+            next();
+        })
+    });
 
 
 };
