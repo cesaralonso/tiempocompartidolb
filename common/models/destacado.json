@@ -16,7 +16,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "membresia": {
+      "type": "belongsTo",
+      "model": "Membresia",
+      "foreignKey": "idMembresia"
+    }
+  },
   "acls": [],
   "methods": {}
 }
