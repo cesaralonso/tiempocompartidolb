@@ -91,15 +91,32 @@ module.exports = function(Membresia) {
         next();
     });
 
-    Membresia.findUbicadoEn = function(callback) {
-        callback();
+    Membresia.findTipoInmueble = function(tipoInmueble, callback) {
+        callback(null, tipoInmueble);
     }
     
-    Membresia.afterRemote('findUbicadoEn', function(context, model, next) {
-        var ubicadoEn = context.req.ubicadoEn;
+    Membresia.beforeRemote('findTipoInmueble', function(ctx, instance, next) {
+        console.log('1');
+        if (!ctx.args.filter) {
+            ctx.args.filter = {};
+            console.log('1.5');
+        }
+        ctx.args.filter.include = [ "creador", "disponibilidades", "amenidades", "paisOrigen", "estadoOrigen", "localidadOrigen", "afiliaciones", "destacado", "imagenes", "ubicacion", "messages" ];
+        if (!ctx.args.filter.where) {
+            ctx.args.filter.where = {};
+        }
+        ctx.args.filter.where = _.merge(ctx.args.filter.where, { idPerson: { exists : true }});
+        ctx.args.filter.order = "created DESC"
 
-        Membresia.find({ where: {  ubicadoEn: ubicadoEn }}, function(error, membresias) {
-            if (error) 
+        console.log(2);
+        next();
+    });
+    
+    Membresia.afterRemote('findTipoInmueble', function(context, model, next) {
+        var inmueble = context.args.tipoInmueble;
+        console.log(inmueble);
+        Membresia.find({ where: {  tipoInmueble: inmueble }}, function(error, membresias) {
+            if (error)  
                 return next(error);
             context.result = membresias;
             next();

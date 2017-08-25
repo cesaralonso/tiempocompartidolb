@@ -63,7 +63,6 @@ module.exports = function(Person) {
     });
 
     Person.beforeRemote('*.__get__favoritos', function(ctx, instance, next) {
-        console.log('Entró');
         if (!ctx.args.filter) {
             ctx.args.filter = {};
         }

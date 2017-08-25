@@ -261,10 +261,10 @@
   },
   "acls": [],
   "methods": {
-    "findUbicadoEn": {
+    "findTipoInmueble": {
       "accepts": [
         {
-          "arg": "ubicadoEn", 
+          "arg": "tipoInmueble", 
           "type": "string"
         }
       ],
@@ -274,10 +274,10 @@
           "type": "object"
         }
       ],
-      "description": "Devuelve todas las membresias relacionadas con alguna ubicacion ",
+      "description": "Devuelve todas las membresias relacionadas con el tipo de inmueble ",
       "http": [
         {
-          "path": "/findUbicadoEn",
+          "path": "/findTipoInmueble/:tipoInmueble",
           "verb": "get"
         }
       ]
