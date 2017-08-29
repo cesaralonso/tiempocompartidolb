@@ -96,7 +96,9 @@ module.exports = function(Membresia) {
     }
     
     Membresia.beforeRemote('findTipoInmueble', function(ctx, instance, next) {
-        console.log('1');
+        console.log(ctx);
+        console.log(instance);
+        
         if (!ctx.args.filter) {
             ctx.args.filter = {};
             console.log('1.5');
@@ -105,7 +107,7 @@ module.exports = function(Membresia) {
         if (!ctx.args.filter.where) {
             ctx.args.filter.where = {};
         }
-        ctx.args.filter.where = _.merge(ctx.args.filter.where, { idPerson: { exists : true }});
+        // ctx.args.filter.where = _.merge(ctx.args.filter.where, { idPerson: { exists : true }});
         ctx.args.filter.order = "created DESC"
 
         console.log(2);

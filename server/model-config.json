@@ -97,5 +97,9 @@
   "Promocion": {
     "dataSource": "mongo",
     "public": true
+  },
+  "Ubicado": {
+    "dataSource": "mongo",
+    "public": true
   }
 }

@@ -264,7 +264,7 @@
     "findTipoInmueble": {
       "accepts": [
         {
-          "arg": "tipoInmueble", 
+          "arg": "tipoInmueble",
           "type": "string"
         }
       ],
