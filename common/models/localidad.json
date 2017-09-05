@@ -16,12 +16,21 @@
       "required": true
     },
     "idEstado": {
-      "type": "number",
+      "type": "number"
+    },
+    "idPais": {
+      "type": "string",
       "required": true
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "paisProcedencia": {
+      "type": "belongsTo",
+      "model": "Pais",
+      "foreignKey": "idPais"
+    }
+   },
   "acls": [],
   "methods": {}
 }
