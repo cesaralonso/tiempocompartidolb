@@ -125,5 +125,57 @@ module.exports = function(Membresia) {
         })
     });
 
+    Membresia.busqueda = function(pais, ciudad, rentaventa, cb) {
+        cb(null, pais, ciudad, rentaventa);
+    };
+
+    Membresia.remoteMethod('busqueda', {
+        accepts: [
+            {arg: 'pais', type: 'string'},
+            {arg: 'ciudad', type: 'string'},
+            {arg: 'rentaventa', type: 'string'},
+        ],        
+        returns: {arg: 'membresias', type: 'object'},
+        http:    {path: '/busqueda/:pais/:ciudad/:rentaventa', verb: 'get'}
+    });
+    Membresia.beforeRemote('busqueda', function(ctx, instance, next) {
+        console.log('Entra');
+        if (!ctx.args.filter) {
+            ctx.args.filter = {};
+        }
+        ctx.args.filter.include = [ "creador" ];
+        if (!ctx.args.filter.where) {
+            ctx.args.filter.where = {};
+        }
+        ctx.args.filter.where = _.merge(ctx.args.filter.where, { });
+        ctx.args.filter.order = "created DESC"
+        next();
+    });
+
+    Membresia.afterRemote('busqueda', function(ctx, instance, next) {
+        var pais = ctx.args.pais;
+        var ciudad = ctx.args.ciudad;
+        var rentaventa = ctx.args.rentaventa;
+
+        var ventaVal = (rentaventa == 'VENTA') ? true : false;
+        var rentaVal = (rentaventa == 'RENTA') ? true : false;
+        console.log(pais);
+        console.log(ciudad);
+        console.log(rentaventa);
+        Membresia.find({ where: { 
+            and:[ 
+                { localidadNombre: { like: ciudad } }, 
+                { venta: ventaVal }, 
+                { renta: rentaVal }, 
+                { localidadNombre: { like: ciudad } }, 
+            ]}
+        }, function(error, membresias) {
+            if (error)  
+                return next(error);
+            ctx.result = membresias;
+            next();
+        })
+    });
+
 
 };
