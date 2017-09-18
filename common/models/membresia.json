@@ -188,8 +188,7 @@
       "required": true
     },
     "paisNombre": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "enlace_url": {
       "type": "string"
@@ -199,6 +198,9 @@
     },
     "mantenimiento": {
       "type": "boolean"
+    },
+    "idPais": {
+      "type": "string"
     }
   },
   "validations": [],

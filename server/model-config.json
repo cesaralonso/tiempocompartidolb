@@ -10,6 +10,9 @@
   "User": {
     "dataSource": "mongo"
   },
+  "Email": {
+    "dataSource": "emailDs"
+  },
   "AccessToken": {
     "dataSource": "mongo",
     "public": false
@@ -28,7 +31,10 @@
   },
   "Person": {
     "dataSource": "mongo",
-    "public": true
+    "public": true,
+    "options": {
+      "emailVerificationRequired": true
+    }
   },
   "Message": {
     "dataSource": "mongo",
@@ -101,5 +107,8 @@
   "Ubicado": {
     "dataSource": "mongo",
     "public": true
+  }, 
+  "Email": {
+    "dataSource": "emailDs"
   }
 }

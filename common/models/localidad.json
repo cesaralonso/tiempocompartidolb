@@ -30,7 +30,7 @@
       "model": "Pais",
       "foreignKey": "idPais"
     }
-   },
+  },
   "acls": [],
   "methods": {}
 }

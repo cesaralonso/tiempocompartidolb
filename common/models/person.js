@@ -1,6 +1,7 @@
 'use strict';
 
 var _ = require('lodash');
+var config = require('../../server/config.json');
 
 module.exports = function(Person) {
     Person.beforeRemote('*.__create__messages', function(ctx, instance, next) {
@@ -104,7 +105,69 @@ module.exports = function(Person) {
         })
     });
 
-    
+    Person.verifyEmail = function(id, cb) {
+        cb(null, id);
+    };
+
+    Person.remoteMethod('verifyEmail', {
+        accepts: { arg: 'id', type: 'string' },        
+        returns: { arg: 'reponse', type: 'object' },
+        http:    { path: '/verifyEmail/:id', verb: 'post' }
+    });
+
+    Person.afterRemote('verifyEmail', function(context, person, next) {
+        var personId = context.req.params.id;
+        if (!personId) {
+            return next(emailNotVerifiedError());
+        }
+
+        Person.findById(personId, function(error, person) {
+            if (error) 
+                return next(error);
+            if (!person) 
+                return next(emailNotVerifiedError());
+            
+            // Sets emailVerified as true
+            person.emailVerified = true;
+            Person.replaceById(person.id, person, function(err, person) {
+                if(err) 
+                    return next(err);
+
+                context.result = person;
+                next();
+            });
+        });
+    });
+
+    function emailNotVerifiedError() {
+        var error = new Error();
+        error.statusCode = 401;
+        error.message = 'Email has not been verified correctly';
+        error.code = 'VERIFY_AUTHENTICATION';
+        return error; 
+    }
+
+    // Sends the email to reset password
+    Person.on('resetPasswordRequest', function(info) {
+        var url = 'http://' + config.host_laravel + ':' + config.port_laravel + '/reset-password/';
+        var html = 'Click <a href="' + url +
+            info.accessToken.id + '">here</a> to reset your password';
+
+        console.log(url);
+        console.log(html);
+
+        Person.app.models.Email.send({
+          to: info.email,
+          from: info.email,
+          subject: 'Password reset',
+          html: html
+        }, function(err) {
+          if (err) return console.log(err);
+          console.log('> sending password reset email to:', info.email);
+        });
+    });
+
+
     Person.disableRemoteMethod('__create__accessTokens', false);
     Person.disableRemoteMethod('__delete__accessTokens', false);
     Person.disableRemoteMethod('__destroyById__accessTokens', false);

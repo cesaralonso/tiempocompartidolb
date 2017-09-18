@@ -49,8 +49,6 @@ module.exports = function(Membresia) {
     });
 
     Membresia.beforeRemote('find', function(ctx, instance, next) {
-        console.log("instance find", instance);
-
         if (!ctx.args.filter) {
             ctx.args.filter = {};
         }
@@ -64,7 +62,6 @@ module.exports = function(Membresia) {
     });
 
     Membresia.beforeRemote('findOne', function(ctx, instance, next) {
-        console.log("instance findOne", instance);
 
         if (!ctx.args.filter) {
             ctx.args.filter = {};
@@ -96,12 +93,10 @@ module.exports = function(Membresia) {
     }
     
     Membresia.beforeRemote('findTipoInmueble', function(ctx, instance, next) {
-        console.log(ctx);
-        console.log(instance);
+
         
         if (!ctx.args.filter) {
             ctx.args.filter = {};
-            console.log('1.5');
         }
         ctx.args.filter.include = [ "creador", "disponibilidades", "amenidades", "paisOrigen", "estadoOrigen", "localidadOrigen", "afiliaciones", "destacado", "imagenes", "ubicacion", "messages" ];
         if (!ctx.args.filter.where) {
@@ -110,13 +105,11 @@ module.exports = function(Membresia) {
         // ctx.args.filter.where = _.merge(ctx.args.filter.where, { idPerson: { exists : true }});
         ctx.args.filter.order = "created DESC"
 
-        console.log(2);
         next();
     });
     
     Membresia.afterRemote('findTipoInmueble', function(context, model, next) {
         var inmueble = context.args.tipoInmueble;
-        console.log(inmueble);
         Membresia.find({ where: {  tipoInmueble: inmueble }}, function(error, membresias) {
             if (error)  
                 return next(error);
@@ -125,8 +118,8 @@ module.exports = function(Membresia) {
         })
     });
 
-    Membresia.busqueda = function(pais, ciudad, rentaventa, cb) {
-        cb(null, pais, ciudad, rentaventa);
+    Membresia.busqueda = function(pais, ciudad, rentaventa, huespedes, cb) {
+        cb(null, pais, ciudad, rentaventa, huespedes);
     };
 
     Membresia.remoteMethod('busqueda', {
@@ -134,21 +127,23 @@ module.exports = function(Membresia) {
             {arg: 'pais', type: 'string'},
             {arg: 'ciudad', type: 'string'},
             {arg: 'rentaventa', type: 'string'},
+            {arg: 'huespedes', type: 'number'},
         ],        
         returns: {arg: 'membresias', type: 'object'},
-        http:    {path: '/busqueda/:pais/:ciudad/:rentaventa', verb: 'get'}
+        http:    {path: '/busqueda/:pais/:ciudad/:rentaventa/:huespedes', verb: 'get'}
     });
+
     Membresia.beforeRemote('busqueda', function(ctx, instance, next) {
-        console.log('Entra');
         if (!ctx.args.filter) {
             ctx.args.filter = {};
         }
         ctx.args.filter.include = [ "creador" ];
+        
         if (!ctx.args.filter.where) {
             ctx.args.filter.where = {};
         }
-        ctx.args.filter.where = _.merge(ctx.args.filter.where, { });
-        ctx.args.filter.order = "created DESC"
+        ctx.args.filter.where = _.merge(ctx.args.filter.where, { idPerson: { exists: true} });
+        // ctx.args.filter.order = "created DESC"
         next();
     });
 
@@ -156,18 +151,18 @@ module.exports = function(Membresia) {
         var pais = ctx.args.pais;
         var ciudad = ctx.args.ciudad;
         var rentaventa = ctx.args.rentaventa;
+        var huespedes = ctx.args.huespedes;
 
         var ventaVal = (rentaventa == 'VENTA') ? true : false;
         var rentaVal = (rentaventa == 'RENTA') ? true : false;
-        console.log(pais);
-        console.log(ciudad);
-        console.log(rentaventa);
+
         Membresia.find({ where: { 
             and:[ 
                 { localidadNombre: { like: ciudad } }, 
                 { venta: ventaVal }, 
                 { renta: rentaVal }, 
-                { localidadNombre: { like: ciudad } }, 
+                { localidadNombre: { like: ciudad } },
+                { maxOcupantes: { gte: huespedes } },
             ]}
         }, function(error, membresias) {
             if (error)  
