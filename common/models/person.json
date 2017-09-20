@@ -73,6 +73,7 @@
       "model": "Favorito",
       "foreignKey": "idPerson"
     }
+    
   },
   "acls": [
     {

@@ -107,8 +107,9 @@
   "Ubicado": {
     "dataSource": "mongo",
     "public": true
-  }, 
-  "Email": {
-    "dataSource": "emailDs"
+  },
+  "Correo": {
+    "dataSource": "mongo",
+    "public": true
   }
 }

@@ -206,7 +206,7 @@
   "validations": [],
   "relations": {
     "amenidades": {
-      "type": "hasMany",
+      "type": "hasAndBelongsToMany",
       "model": "Amenidad",
       "foreignKey": "idMembresia"
     },
@@ -241,7 +241,7 @@
       "foreignKey": "idMembresia"
     },
     "afiliaciones": {
-      "type": "hasMany",
+      "type": "hasAndBelongsToMany",
       "model": "Afiliacion",
       "foreignKey": "idMembresia"
     },
