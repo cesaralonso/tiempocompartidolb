@@ -30,7 +30,7 @@ module.exports = function(Localidad) {
     Localidad.afterRemote('findLocalidades', function(ctx, instance, next) {
         var paisId = ctx.args.paisId;
         console.log(paisId);
-        Localidad.find({ where: { idPais: {like : paisId} }}, function(error, localidades) {
+        Localidad.find({ where: { idPais:  paisId }}, function(error, localidades) {
             if (error)  
                 return next(error);
             ctx.result = localidades;
