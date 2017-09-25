@@ -72,6 +72,11 @@
       "type": "hasMany",
       "model": "Favorito",
       "foreignKey": "idPerson"
+    },
+    "correos": {
+      "type": "hasMany",
+      "model": "Correo",
+      "foreignKey": "destinatarioId"
     }
     
   },

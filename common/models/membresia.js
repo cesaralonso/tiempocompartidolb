@@ -171,6 +171,4 @@ module.exports = function(Membresia) {
             next();
         })
     });
-
-
 };

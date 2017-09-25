@@ -185,7 +185,7 @@
     },
     "localidadNombre": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "paisNombre": {
       "type": "string"

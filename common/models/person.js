@@ -167,6 +167,19 @@ module.exports = function(Person) {
         });
     });
 
+    Person.beforeRemote('find', function(ctx, instance, next) {
+        if (!ctx.args.filter) {
+            ctx.args.filter = {};
+        }
+        ctx.args.filter.include = [ "correos"];
+        if (!ctx.args.filter.where) {
+            ctx.args.filter.where = {};
+        }
+        // ctx.args.filter.where = _.merge(ctx.args.filter.where, { destinatarioId: { exists : true }});
+        // ctx.args.filter.order = "created DESC"
+        next();
+    });
+
 
     Person.disableRemoteMethod('__create__accessTokens', false);
     Person.disableRemoteMethod('__delete__accessTokens', false);
