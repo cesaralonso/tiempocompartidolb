@@ -39,6 +39,11 @@
       "type": "belongsTo",
       "model": "Person",
       "foreignKey": ""
+    },
+    "membresia": {
+      "type": "belongsTo",
+      "model": "Membresia",
+      "foreignKey": ""
     }
   },
   "acls": [],

@@ -171,12 +171,7 @@ module.exports = function(Person) {
         if (!ctx.args.filter) {
             ctx.args.filter = {};
         }
-        ctx.args.filter.include = [ "correos"];
-        if (!ctx.args.filter.where) {
-            ctx.args.filter.where = {};
-        }
-        // ctx.args.filter.where = _.merge(ctx.args.filter.where, { destinatarioId: { exists : true }});
-        // ctx.args.filter.order = "created DESC"
+        ctx.args.filter.include = [ "correos" ];
         next();
     });
 

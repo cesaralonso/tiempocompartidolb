@@ -6,12 +6,18 @@ module.exports = function(Correo) {
         if (!ctx.args.filter) {
             ctx.args.filter = {};
         }
-        ctx.args.filter.include = [ "destinatario","remitente" ];
+        ctx.args.filter.include = [ "destinatario","remitente", "membresia" ];
         if (!ctx.args.filter.where) {
             ctx.args.filter.where = {};
         }
-        // ctx.args.filter.where = _.merge(ctx.args.filter.where, { destinatarioId: { exists : true }});
-        // ctx.args.filter.order = "created DESC"
         next();
     });
+
+    Correo.beforeRemote('create', function(ctx, instance, next) {
+        var body = ctx.args.data;
+        var now = new Date();
+        var now_utc = new Date(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),  now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
+        body.fechaHora = now_utc;
+        next();
+    })
 };

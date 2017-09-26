@@ -259,6 +259,11 @@
       "type": "hasMany",
       "model": "Message",
       "foreignKey": "idMembresia"
+    },
+    "correos": {
+      "type": "hasMany",
+      "model": "Correo",
+      "foreignKey": "membresiaId"
     }
   },
   "acls": [],
