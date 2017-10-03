@@ -150,8 +150,8 @@ module.exports = function(Person) {
     // Sends the email to reset password
     Person.on('resetPasswordRequest', function(info) {
         var url = 'http://' + config.host_laravel + ':' + config.port_laravel + '/reset-password/';
-        var html = 'Click <a href="' + url +
-            info.accessToken.id + '">here</a> to reset your password';
+        var html = 'Haz click <a href="' + url +
+            info.accessToken.id + '">aquí</a> para cerar una nueva contraseña';
 
         console.log(url);
         console.log(html);
@@ -159,7 +159,7 @@ module.exports = function(Person) {
         Person.app.models.Email.send({
           to: info.email,
           from: info.email,
-          subject: 'Password reset',
+          subject: 'Cambio de contraseña',
           html: html
         }, function(err) {
           if (err) return console.log(err);
@@ -172,6 +172,14 @@ module.exports = function(Person) {
             ctx.args.filter = {};
         }
         ctx.args.filter.include = [ "correos" ];
+        next();
+    });
+    
+    Person.beforeRemote('findById', function(ctx, instance, next) {
+        if (!ctx.args.filter) {
+            ctx.args.filter = {};
+        }
+        ctx.args.filter.include = [ "paisOrigen" ];
         next();
     });
 
