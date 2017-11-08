@@ -72,7 +72,18 @@
       "type": "hasMany",
       "model": "Favorito",
       "foreignKey": "idPerson"
+    },
+    "correos": {
+      "type": "hasMany",
+      "model": "Correo",
+      "foreignKey": "destinatarioId"
+    },
+    "paisOrigen": {
+      "type": "belongsTo",
+      "model": "Pais",
+      "foreignKey": "pais"
     }
+    
   },
   "acls": [
     {

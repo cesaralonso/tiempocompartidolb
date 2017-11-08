@@ -29,7 +29,7 @@
     "deleteFavorito": {
       "accepts": [
         {
-          "arg": "idMembresia", 
+          "arg": "idMembresia",
           "type": "string"
         }
       ],

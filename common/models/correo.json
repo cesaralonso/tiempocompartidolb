@@ -1,0 +1,51 @@
+{
+  "name": "Correo",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nombreRemitente": {
+      "type": "string",
+      "required": true
+    },
+    "emailRemitente": {
+      "type": "string",
+      "required": false
+    },
+    "cuerpo": {
+      "type": "string",
+      "required": true
+    },
+    "nombreDestinatario": {
+      "type": "string",
+      "required": false
+    },
+    "fechaHora": {
+      "type": "string",
+      "required": false
+    }
+
+  },
+  "validations": [],
+  "relations": {
+    "remitente": {
+      "type": "belongsTo",
+      "model": "Person",
+      "foreignKey": ""
+    },
+    "destinatario": {
+      "type": "belongsTo",
+      "model": "Person",
+      "foreignKey": ""
+    },
+    "membresia": {
+      "type": "belongsTo",
+      "model": "Membresia",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
