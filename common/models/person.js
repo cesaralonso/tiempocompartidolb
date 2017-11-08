@@ -149,7 +149,7 @@ module.exports = function(Person) {
 
     // Sends the email to reset password
     Person.on('resetPasswordRequest', function(info) {
-        var url = 'http://' + config.host_laravel + ':' + config.port_laravel + '/reset-password/';
+        var url = `http://${config.host_laravel}/reset-password/`;
         var html = 'Haz click <a href="' + url +
             info.accessToken.id + '">aquí</a> para cerar una nueva contraseña';
 
