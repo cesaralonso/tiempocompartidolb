@@ -239,7 +239,7 @@
       "foreignKey": "idMembresia"
     },
     "afiliaciones": {
-      "type": "hasMany",
+      "type": "hasAndBelongsToMany",
       "model": "Afiliacion",
       "foreignKey": "idMembresia"
     },
