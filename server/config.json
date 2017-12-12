@@ -2,8 +2,8 @@
   "restApiRoot": "/api",
   "host": "0.0.0.0",
   "port": 3000,
-  "host_laravel": "localhost",
-  "port_laravel": "8000",
+  "host_laravel": "https://www.semanasvacacionales.com",
+  "port_laravel": "",
   "https-port": 3001,
   "remoting": {
     "context": false,
