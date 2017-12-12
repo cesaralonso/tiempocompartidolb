@@ -17,11 +17,11 @@
     },
     "nickname": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "email": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "ciudad": {
       "type": "string",
