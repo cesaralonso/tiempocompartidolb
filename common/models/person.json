@@ -58,6 +58,14 @@
     "lenguajes": {
       "type": "string",
       "required": false
+    },
+    "newsletter": {
+      "type": "boolean",
+      "required": false
+    },
+    "acceso": {
+      "type": "string",
+      "required": false
     }
   },
   "validations": [],
