@@ -7,6 +7,10 @@
     "validateUpsert": true
   },
   "properties": {
+    "web_id": {
+      "type": "string",
+      "required": false
+    },
     "name": {
       "type": "string",
       "required": false
