@@ -40,7 +40,7 @@
     },
     "dormitorios": {
       "type": "number",
-      "required": true
+      "required": false
     },
     "lockOff": {
       "type": "boolean",
@@ -48,7 +48,7 @@
     },
     "tipoInmueble": {
       "type": "string",
-      "required": true,
+      "required": false,
       "default": "HOTELERA"
     },
     "banosCompletos": {
@@ -65,7 +65,7 @@
     },
     "maxOcupantes": {
       "type": "number",
-      "required": true
+      "required": false
     },
     "maxPrivacidad": {
       "type": "number",
@@ -145,7 +145,7 @@
     },
     "telContacto": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "cualSemanaFija": {
       "type": "number",
@@ -177,7 +177,7 @@
     },
     "metodoPago": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "numCamas": {
       "type": "number",
