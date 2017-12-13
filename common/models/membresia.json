@@ -16,7 +16,7 @@
     },
     "clubNombre": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "clubUrl": {
       "type": "string",
@@ -24,7 +24,7 @@
     },
     "semanaTipo": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "descripcion": {
       "type": "string",

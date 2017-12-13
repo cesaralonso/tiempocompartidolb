@@ -13,7 +13,7 @@
     },
     "descripcion": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "tipo": {
       "type": "string",
